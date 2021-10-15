@@ -2,6 +2,7 @@
 import FeedbackItem from './components/FeedbackItem.svelte'
 import FeedbackList from './components/FeedbackList.svelte';
 import FeedbackStats from './components/FeedbackStats.svelte';
+import FeedbackForm from './components/FeedbackForm.svelte'
 	let feedback = [
 		{
 			id: 1,
@@ -33,6 +34,7 @@ import FeedbackStats from './components/FeedbackStats.svelte';
 </script>
 
 <main class="container">
+	<FeedbackForm />
 	<FeedbackStats {count} {average} />
 	<FeedbackList {feedback} on:delete-feedback={deleteFeedback} />
 </main>
