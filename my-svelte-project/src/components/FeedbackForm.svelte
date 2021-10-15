@@ -3,7 +3,20 @@ import Card from './Card.svelte'
 import Button from './Button.svelte'
 
 let text = ''
+let rating = 10
 let btnDisabled = true
+let min = 10
+let message
+
+const handleInput = () => {
+  if(text.trim().length <= min) {
+    message = `Text must be at least ${min} characters.`
+    btnDisabled = true
+  } else {
+    message = null
+    btnDisabled = false
+  }
+}
 </script>
 
 
@@ -16,9 +29,14 @@ let btnDisabled = true
 <form>
     <!--RATING SELECT-->
     <div class="input-group">
-        <input type="text" bind:value = {text} placeholder="Tell us something so that we can improve ourselves! Thankyou." >
+        <input type="text" on:input={handleInput} bind:value = {text} placeholder="Tell us something so that we can improve ourselves! Thankyou." >
         <Button disabled={btnDisabled} type="submit">Send</Button>
     </div>
+    {#if message}
+      <div class="message">
+      {message}
+    </div>
+    {/if}
 </form>
 </Card>
 
