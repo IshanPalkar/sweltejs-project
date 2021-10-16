@@ -1,8 +1,12 @@
 <script>
 import {v4 as uuidv4} from 'uuid'
+import {createEventDispatcher} from 'svelte'
 import Card from './Card.svelte'
 import Button from './Button.svelte'
 import RatingSelect from './RatingSelect.svelte'
+
+
+const dispatch = createEventDispatcher()
 
 let text = ''
 let rating = 10
@@ -30,7 +34,9 @@ const handleInput = () => {
         rating: +rating
       }
 
-      console.log(newFeedback)
+      dispatch('add-feedback' , newFeedback)
+
+      text = ''
     }
   }
 </script>
