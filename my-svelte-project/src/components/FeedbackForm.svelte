@@ -23,12 +23,14 @@ const handleInput = () => {
 }
 
   const handleSubmit = () => {
-    if(text.trim().length => min) {
+    if(text.trim().length >  min) {
       const newFeedback ={
-        id: 
+        id: uuidv4(),
         text,
         rating: +rating
       }
+
+      console.log(newFeedback)
     }
   }
 </script>
@@ -40,7 +42,7 @@ const handleInput = () => {
     </header>
 
 
-<form on:submit=|preventDefault={handleSubmit}>
+<form on:submit|preventDefault={handleSubmit}>
     <RatingSelect on:rating-select={handleSelect}/>
     <div class="input-group">
         <input type="text" on:input={handleInput} bind:value = {text} placeholder="Tell us something so that we can improve ourselves! Thankyou." >
