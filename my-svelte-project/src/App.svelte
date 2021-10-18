@@ -1,5 +1,4 @@
-<script>
-import FeedbackItem from './components/FeedbackItem.svelte'
+<script lang= "ts">
 import FeedbackList from './components/FeedbackList.svelte';
 import FeedbackStats from './components/FeedbackStats.svelte';
 import FeedbackForm from './components/FeedbackForm.svelte'
@@ -24,7 +23,7 @@ import FeedbackForm from './components/FeedbackForm.svelte'
 </script>
 
 <main class="container">
-	<FeedbackForm on:add-feedback={addFeedback}/>
+	<FeedbackForm on:add-feedback={addFeedback} />
 	<FeedbackStats {count} {average} />
 	<FeedbackList {feedback} on:delete-feedback={deleteFeedback} />
 </main>
