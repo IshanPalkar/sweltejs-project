@@ -1,9 +1,7 @@
 <script>
 import { FeedbackStore } from '../store'
-import FeedbackStats from './FeedbackStats.svelte';
-import FeedbackForm from './FeedbackForm.svelte';
 import Card from './Card.svelte'
-    export let item
+export let item
 
 
     const handleDelete = (itemId) => {

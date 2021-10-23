@@ -4,6 +4,7 @@ import {FeedbackStore} from '../store'
 import Card from './Card.svelte'
 import Button from './Button.svelte'
 import RatingSelect from './RatingSelect.svelte'
+import FeedbackStats from './FeedbackStats.svelte';
 
 
 
@@ -63,7 +64,7 @@ const handleInput = () => {
 </Card>
 
 <style>
-     header {
+  header {
     max-width: 400px;
     margin: auto;
   }

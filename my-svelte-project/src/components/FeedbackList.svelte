@@ -3,7 +3,7 @@
 import {FeedbackStore} from '../store'
 import {fade , scale } from 'svelte/transition';
 import FeedbackItem from "./FeedbackItem.svelte";
-let feedback = []
+// let feedback = []
  
 // let feedback = []
   // const unsubscribe = FeedbackStore.subscribe((data) => feedback = data)
